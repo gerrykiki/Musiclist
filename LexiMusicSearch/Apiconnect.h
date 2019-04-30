@@ -12,6 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Apiconnect : NSObject
 
++ (instancetype)sharedInstance;
+
+
+- (void) getTopSongs: (void (^)(NSDictionary *returnData)) callback;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

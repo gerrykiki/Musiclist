@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
+@property (strong, nonatomic) IBOutlet UITableView *listtable;
+@property (strong, nonatomic) NSMutableArray *itemarray;
+@property (strong, nonatomic) NSMutableArray *searchitemarray;
+@property (strong, nonatomic) IBOutlet UISearchBar *musicsearch;
 
 @end
 

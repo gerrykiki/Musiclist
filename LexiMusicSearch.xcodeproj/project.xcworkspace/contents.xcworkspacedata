@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/gerrylin/Documents/Objective C/LexiMusicSearch/LexiMusicSearch/Apiconnect.h">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/gerrylin/Documents/Objective C/LexiMusicSearch/LexiMusicSearch/Apiconnect.m">
+   </FileRef>
+   <FileRef
       location = "self:LexiMusicSearch.xcodeproj">
    </FileRef>
 </Workspace>

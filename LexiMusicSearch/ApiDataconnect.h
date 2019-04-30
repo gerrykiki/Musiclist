@@ -10,7 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ApiDataconnect : NSData
+@interface ApiDataconnect : NSObject
+
+
+@property (strong, nonatomic) NSMutableArray *musicarray;
+
++ (instancetype)sharedInstance;
+- (void) getMusic: (void (^)(NSDictionary *returnData)) callback;
 
 @end
 
