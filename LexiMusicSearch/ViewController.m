@@ -101,7 +101,27 @@
         return cell;
         
     }
-    
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (searchbool) {
+        
+    }
+    else{
+        NSString *artisName = [itemarray[indexPath.row]objectForKey:@"artistName"];
+        NSString *name = [itemarray[indexPath.row]objectForKey:@"name"];
+        NSString *alerttext = [NSString stringWithFormat:@"Singer is %@",artisName];
+        UIAlertController *selectalert = [UIAlertController alertControllerWithTitle:name
+                                                                              message:alerttext preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [selectalert addAction:cancelAction];
+        
+        [self presentViewController:selectalert animated:YES completion:nil];
+        
+    }
 }
 
 #pragma mark - Search Bar Implementation
