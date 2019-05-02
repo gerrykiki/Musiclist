@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Apiconnect.h"
 
 @interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
@@ -14,6 +15,7 @@
 @property (strong, nonatomic) NSMutableArray *itemarray;
 @property (strong, nonatomic) NSMutableArray *searchitemarray;
 @property (strong, nonatomic) IBOutlet UISearchBar *musicsearch;
+@property (strong, nonatomic) UIView *waitdownload;
 
 @end
 

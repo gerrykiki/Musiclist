@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7382EDC227AD584007B9D68 /* Apiconnect.m in Sources */ = {isa = PBXBuildFile; fileRef = B7382EDA227AD584007B9D68 /* Apiconnect.m */; };
 		B77DCEC92278329900779310 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B77DCEC82278329900779310 /* AppDelegate.m */; };
 		B77DCECC2278329900779310 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B77DCECB2278329900779310 /* ViewController.m */; };
 		B77DCECF2278329900779310 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77DCECD2278329900779310 /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7382EDA227AD584007B9D68 /* Apiconnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Apiconnect.m; sourceTree = "<group>"; };
+		B7382EDB227AD584007B9D68 /* Apiconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Apiconnect.h; sourceTree = "<group>"; };
 		B77DCEC42278329900779310 /* LexiMusicSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexiMusicSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77DCEC72278329900779310 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B77DCEC82278329900779310 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				B77DCEC82278329900779310 /* AppDelegate.m */,
 				B77DCECA2278329900779310 /* ViewController.h */,
 				B77DCECB2278329900779310 /* ViewController.m */,
+				B7382EDB227AD584007B9D68 /* Apiconnect.h */,
+				B7382EDA227AD584007B9D68 /* Apiconnect.m */,
 				B77DCECD2278329900779310 /* Main.storyboard */,
 				B77DCED02278329A00779310 /* Assets.xcassets */,
 				B77DCED22278329A00779310 /* LaunchScreen.storyboard */,
@@ -265,6 +270,7 @@
 				B77DCECC2278329900779310 /* ViewController.m in Sources */,
 				B77DCED72278329A00779310 /* main.m in Sources */,
 				B77DCEC92278329900779310 /* AppDelegate.m in Sources */,
+				B7382EDC227AD584007B9D68 /* Apiconnect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

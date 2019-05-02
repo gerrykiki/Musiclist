@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
 
 @end
@@ -24,33 +25,27 @@
     listtable.dataSource = self;
     musicsearch.delegate = self;
     searchitemarray = [[NSMutableArray alloc]init];
-    //itemarray = [[NSMutableArray alloc]initWithObjects:@"123",@"456", nil];
-    
-    NSString *urlstring = @"https://rss.itunes.apple.com/api/v1/tw/apple-music/top-songs/all/100/explicit.json";
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURL *url = [NSURL URLWithString:urlstring];
-    
-    // Asynchronously API is hit here
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url
-                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                dispatch_sync(dispatch_get_main_queue(), ^{
-                                                    // Update the UI on the main thread.
-                                                    //NSLog(@"%@",data);
-                                                    if (error){
-                                                        
-                                                    }
-                                                    else {
-                                                        NSDictionary *json  = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                                                        [self->itemarray removeAllObjects];
-                                                        self->itemarray  = [[json objectForKey:@"feed"] objectForKey:@"results"];
-                                                        [self->listtable reloadData];
-                                                    }
-                                                });
-                                            }];
-    [dataTask resume];
-    //itemarray = [[NSMutableArray alloc]init];
-    // Do any additional setup after loading the view.
+    Apiconnect *apiconnect = [Apiconnect sharedInstance];
+    _waitdownload = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    _waitdownload.backgroundColor = [UIColor grayColor];
+    UILabel *waitinglable = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+    waitinglable.center = _waitdownload.center;
+    waitinglable.text = @"Loading Music list";
+    waitinglable.textColor = UIColor.whiteColor;
+    waitinglable.textAlignment = NSTextAlignmentCenter;
+    [_waitdownload addSubview:waitinglable];
+    [self.view addSubview:_waitdownload];
+    [apiconnect getTopSongs:^(NSDictionary * _Nonnull returnData) {
+        NSLog(@"returndata = %@",returnData);
+        [self->itemarray removeAllObjects];
+        self->itemarray  = [[returnData objectForKey:@"feed"] objectForKey:@"results"];
+        [self->listtable reloadData];
+        [self->_waitdownload removeFromSuperview];
+        
+    }];
 }
+
+#pragma mark - TableViewController funciton
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
